@@ -2,24 +2,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Form Input 2</title>
+    <title>Final Project</title>
   </head>
 
 
   <body>
 
-    <h1>Form Input - Demo 2</h1>
+    <h1>Student Grades Database</h1>
     <p>Demo of how to take form input and pass it to a program - all in a single page</p>
 
     <?php
        // define variables and set to empty values
-       $arg1 = $arg2 = $output = $retc = "";
+       $arg1 = $arg2 = $arg3 = $arg4 = $arg5 = $output = $retc = "";
        if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $arg1 = test_input($_POST["arg1"]);
          $arg2 = test_input($_POST["arg2"]);
          $arg3 = test_input($_POST["arg3"]);
          $arg4 = test_input($_POST["arg4"]);
-         exec("/usr/lib/cgi-bin/pi/finalproject " . $arg1 . " " . $arg2 . " " . $arg3 .  " " . $arg4,  $output, $retc); 
+	 $arg5 = test_input($_POST["arg5"]);
+         exec("/usr/lib/cgi-bin/pi/finalproject " . $arg1 . " " . $arg2 . " " . $arg3 .  " " . $arg4 . " " $arg5,  $output, $retc); 
        }
        function test_input($data) {
          $data = trim($data);
@@ -29,11 +30,12 @@
        }
     ?>
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      Arg1: <input type="text" name="arg1"><br>
-      Arg2: <input type="text" name="arg2"><br>
-      Arg3: <input type="text" name="arg3"><br>
-      Arg4: <input type="text" name="arg4"><br>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);">
+      First Name: <input type="text" name="arg1"><br>
+      Last Name: <input type="text" name="arg2"><br>
+      Student ID: <input type="text" name="arg3"><br>
+      Total Score of Assignment: <input type="text" name="arg4"><br>
+      Student Score of Assignment: <input type="text" name="arg5"><br>
       <br>
       <input type="submit" value="Go!">
     </form>
@@ -50,7 +52,9 @@
          echo "<br>";
          echo $arg4;
          echo "<br>";
-       
+	 echo $arg5;
+	 echo "<br>";
+         <br>
          echo "<h2>Program Output (an array):</h2>";
          foreach ($output as $line) {
            echo $line;
