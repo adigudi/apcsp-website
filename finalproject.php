@@ -20,7 +20,7 @@
          $arg3 = test_input($_POST["arg3"]);
          $arg4 = test_input($_POST["arg4"]);
 	 $arg5 = test_input($_POST["arg5"]);
-         exec("/usr/lib/cgi-bin/pi/finalproject " . $arg1 . " " . $arg2 . " " . $arg3 .  " " . $arg4 . " " $arg5,  $output, $retc); 
+         exec("/usr/lib/cgi-bin/pi/finalproject " . $arg1 . " " . $arg2 . " " . $arg3 .  " " . $arg4 . " " . $arg5, $output, $retc); 
        }
        function test_input($data) {
          $data = trim($data);
@@ -54,7 +54,7 @@
          echo "<br>";
 	 echo $arg5;
 	 echo "<br>";
-         <br>
+         echo "<br>";
          echo "<h2>Program Output (an array):</h2>";
          foreach ($output as $line) {
            echo $line;
