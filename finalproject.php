@@ -54,7 +54,7 @@
          echo "<br>";
 	 echo $arg5;
 	 echo "<br>";
-         echo "<br>";
+    
          echo "<h2>Program Output (an array):</h2>";
          foreach ($output as $line) {
            echo $line;
