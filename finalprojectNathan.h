@@ -10,3 +10,4 @@ struct Student
   char gradeLetter[256];
 };
 void averageGrade(struct Student* student);
+FILE* outFile;

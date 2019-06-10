@@ -5,16 +5,9 @@
 #include "finalprojectNathan.c"
 #define TRUE 0
 #define FALSE 1
-FILE* outFile;
 
 void printStudent(struct Student* student)
 {
-  // open a file
-  outFile = fopen("testfile.out", "w");
-  if (outFile == NULL) {
-    printf("error - failed to open file for writing\n");
-    return;
-  }
  fprintf(outFile,"\nFirst Name: %s\n", student->firstname);
  fprintf(outFile,"Last Name: %s\n", student->lastname);
  fprintf(outFile,"Student ID: %d\n", student->sid);
@@ -32,7 +25,12 @@ int main(int arc, char* argv[])
   struct Student students[256];
   int b = TRUE;
   int count = 0;
-  while (b == 0)
+  outFile = fopen("testfile.out", "w");
+  if (outFile == NULL) {
+    printf("error - failed to open file for writing\n");
+    return 1; 
+}
+ while (b == 0)
   {
     printf("Create New Student (Yes/No)?  ");
     fgets(input, 100, stdin);
@@ -83,9 +81,9 @@ int main(int arc, char* argv[])
 	//printf("Student Score: %f\n", (*students).scoreearned);
 	//printf("Grade Percent: %f\n", (*students).gradePercent);
 	printStudent(&students[i]);
-        fclose(outFile);     
- }
-	//averageGrade(students);
+    }
+	averageGrade(students);
+        fclose(outFile);
     }
   }
   return 0;
