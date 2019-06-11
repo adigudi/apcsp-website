@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include "finalprojectNathan.h"
-#include "finalprojectNathan.c"
 #define TRUE 0
 #define FALSE 1
 
@@ -19,7 +18,7 @@ void printStudent(struct Student* student)
 
 int main(int arc, char* argv[])
 {
-  int arr[] = {5, 8, 3, 7, 0};
+ // int arr[] = {5, 8, 3, 7, 0};
   char input[256];
   char ans;
   struct Student students[256];

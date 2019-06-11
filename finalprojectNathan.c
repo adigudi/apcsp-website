@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include "finalprojectNathan.h"
+#include "finalprojectNathan.h"
  
 void averageGrade(struct Student* student)
 {

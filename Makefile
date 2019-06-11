@@ -1,4 +1,4 @@
-TARGET = final
+TARGET = finalproject
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall -I.
@@ -8,8 +8,8 @@ CFLAGS = -g -Wall -I.
 default: $(TARGET)
 all: default
 
-HEADERS = hellofunc.h
-OBJECTS = finalproject.o algorithm.o
+HEADERS = $(wildcard *.h)
+OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
