@@ -1,4 +1,4 @@
-TARGET = finalproject
+TARGET = final
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall -I.
